@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "AWS Account Highlighter",
+  "version": "1.0",
+  "description": "Changes AWS console header background if using a specific account ID.",
+  "permissions": ["scripting", "storage"],
+  "host_permissions": ["https://eu-north-1.console.aws.amazon.com/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://eu-north-1.console.aws.amazon.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
